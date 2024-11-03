@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6903068114064026298}
   - component: {fileID: 6903068114064026299}
   - component: {fileID: 3700964436638101373}
-  - component: {fileID: 8661885168176161656}
-  - component: {fileID: 8038543865762478431}
+  - component: {fileID: 5869085546192786684}
+  - component: {fileID: 8085056185748709082}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -108,7 +108,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8661885168176161656
+--- !u!114 &5869085546192786684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,19 +120,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85f6a3529b7f62429406e498a6af3c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!70 &8038543865762478431
-CapsuleCollider2D:
+  walkSpeed: 5
+--- !u!114 &8085056185748709082
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6903068114064026297}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.000000029802322, y: -0.26449645}
-  m_Size: {x: 0.58894426, y: 1.6624887}
-  m_Direction: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: 0}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
