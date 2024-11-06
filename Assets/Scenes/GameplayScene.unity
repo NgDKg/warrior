@@ -601,7 +601,6 @@ GameObject:
   - component: {fileID: 651286960}
   - component: {fileID: 651286962}
   - component: {fileID: 651286961}
-  - component: {fileID: 651286963}
   m_Layer: 0
   m_Name: NoCollision
   m_TagString: Untagged
@@ -1341,38 +1340,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &651286963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651286959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cdb5df792b922440b8e9e81180660e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  groundDistance: 0.5
-  wallDistance: 0.5
-  ceilingDistance: 0.5
-  _isGrounded: 0
-  _isOnWall: 0
-  _isOnCeiling: 0
 --- !u!1 &937287435
 GameObject:
   m_ObjectHideFlags: 3
