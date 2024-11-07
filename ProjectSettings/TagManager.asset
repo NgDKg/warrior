@@ -11,11 +11,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Player
+  - Enemi
+  - PlayerHItbox
+  - EnemiHitbox
   - 
   - 
   - 
@@ -40,6 +40,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 3401633469
+    locked: 0
+  - name: Tile Palette
+    uniqueID: 2358513161
     locked: 0
   - name: Default
     uniqueID: 0
