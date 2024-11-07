@@ -3,25 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 5.0f;
     public float runSpeed = 8.0f;
+    public float jumpImpulse = 10.0f;
+    public float walkOnTheAirSpeed = 5f;
+    TouchingDirections touchingDirection;
 
     public float CurrentMoveSpeed
     {
         get
         {
-            if (IsMoving)
+            if (canMove)
             {
-                if (IsRunning)
+                if (IsMoving && !touchingDirection.IsOnWall)
                 {
-                    return runSpeed;
+                    if (touchingDirection.IsGrounded)
+                    {
+                        if (IsRunning)
+                        {
+                            return runSpeed;
+                        }
+                        else
+                        {
+                            return walkSpeed;
+                        }
+                    }
+                    else
+                    {
+                        return walkOnTheAirSpeed;
+                    }
                 }
                 else
                 {
-                    return walkSpeed;
+                    return 0;
                 }
             }
             else
@@ -29,7 +46,6 @@ public class PlayerController : MonoBehaviour
                 return 0;
             }
         }
-
     }
     Vector2 moveInput;
     Rigidbody2D rb;
@@ -70,6 +86,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public bool _isFacingRight = true;
+
     public bool IsFacingRight
     {
         get
@@ -91,23 +108,13 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        touchingDirection = GetComponent<TouchingDirections>();
     }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+        animator.SetFloat(AnimationName.yVelocity, rb.velocity.y);
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -130,6 +137,14 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public bool canMove 
+    {
+        get
+        { 
+            return animator.GetBool(AnimationName.canMove);
+        }
+    }
+
     public void OnRun(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -141,5 +156,22 @@ public class PlayerController : MonoBehaviour
             IsRunning = false;
         }
 
+    }
+
+    public void OnAir(InputAction.CallbackContext context)
+    {
+        if (context.started && touchingDirection.IsGrounded && canMove)
+        {
+            animator.SetTrigger(AnimationName.jump);
+            rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+        }
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            animator.SetTrigger(AnimationName.attack);
+        }
     }
 }
