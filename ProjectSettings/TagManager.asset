@@ -41,9 +41,6 @@ TagManager:
   - name: Background
     uniqueID: 3401633469
     locked: 0
-  - name: Ground
-    uniqueID: 3889654363
-    locked: 0
   - name: Tile Palette
     uniqueID: 2358513161
     locked: 0
