@@ -7,8 +7,10 @@ using UnityEngine;
 public class Knight : MonoBehaviour
 {
     TouchingDirections touchingDirections;
-
+    public DetectionZone zone;
     public float walkspeed = 3f;
+    public float walkStopRate = 0.5f;
+    Animator animator;
 
     Rigidbody2D rb;
 
@@ -37,10 +39,39 @@ public class Knight : MonoBehaviour
             }
         }
     }
+
+    public bool _hastarget = false;
+    public bool Hastarget 
+    {
+        get 
+        {
+            return _hastarget;
+        }
+        private set
+        {
+            _hastarget = value;
+            animator.SetBool(AnimationName.hasTarget, value);
+        }
+    }
+
+    public bool CanMove
+    {
+        get
+        {
+            return animator.GetBool(AnimationName.canMove);
+        }
+    }
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
+        animator = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        Hastarget = zone.detectedColider.Count > 0;
     }
 
     private void FixedUpdate()
@@ -49,7 +80,14 @@ public class Knight : MonoBehaviour
         {
             FilpDirection();
         }
-        rb.velocity = new Vector2(walkspeed * walkDirectionVector.x, rb.velocity.y);
+        if (CanMove)
+        {
+            rb.velocity = new Vector2(walkspeed * walkDirectionVector.x, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0, walkStopRate), rb.velocity.y);
+        }
     }
 
     private void FilpDirection()
