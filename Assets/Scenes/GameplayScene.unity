@@ -68936,11 +68936,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3744891136027457568, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.25
+      value: 5.16
       objectReference: {fileID: 0}
     - target: {fileID: 3744891136027457568, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3744891136027457572, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
+      propertyPath: m_Size.y
+      value: 2.3043513
+      objectReference: {fileID: 0}
+    - target: {fileID: 3744891136027457572, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0020701885
       objectReference: {fileID: 0}
     - target: {fileID: 3744891136027457573, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
       propertyPath: m_Name
@@ -68957,6 +68965,26 @@ PrefabInstance:
     - target: {fileID: 5151926566208655788, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
       propertyPath: knockback.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488489676781586486, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
+      propertyPath: maxSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488489676781586486, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
+      propertyPath: walkAcceleration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120771578932852578, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
+      propertyPath: _health
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120771578932852578, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
+      propertyPath: _maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120771578932852578, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
+      propertyPath: invincibilityTime
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8120771578932852578, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
       propertyPath: damageableHit.m_PersistentCalls.m_Calls.Array.size
@@ -69059,9 +69087,17 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnJump
       objectReference: {fileID: 0}
+    - target: {fileID: 8255514594595480796, guid: 3efbfc6b122cb5649b344b58cb1d61d3, type: 3}
+      propertyPath: _maxHealth
+      value: 4304
+      objectReference: {fileID: 0}
     - target: {fileID: 9059386378854568335, guid: 3efbfc6b122cb5649b344b58cb1d61d3, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059386378854568335, guid: 3efbfc6b122cb5649b344b58cb1d61d3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3efbfc6b122cb5649b344b58cb1d61d3, type: 3}
