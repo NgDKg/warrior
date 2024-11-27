@@ -4,29 +4,24 @@ using UnityEngine;
 
 public class ParallaxEffect : MonoBehaviour
 {
-    // References to game object in scene
-    public Camera camera; 
-    public Transform followTarget; // follow target of camera that should be the player
+    public Camera cam;
+    public Transform followTarget;
 
-    // Camera moves and follow player across the screeen 
-    // Parallax effect is moving each of objects based on the movement of the camera 
     // Starting position for the parallax game object
     Vector2 startingPosition;
 
     // Start Z value of the parallax game object
-    // Z axis is going to be the distance from the camera into the bg
     float startingZ;
 
-    // Distance that camera moved from the starting position
-    Vector2 canMoveSinceStart => (Vector2)camera.transform.position - startingPosition;    
+    // Distance that the camera has moved from the starting position of the parallax object
+    Vector2 camMoveSinceStart => (Vector2)cam.transform.position - startingPosition;
 
     float zDistanceFromTarget => transform.position.z - followTarget.transform.position.z;
 
-    // If object is in front of target, near clip plane. else far clip plane
-    float clippingPlane => (camera.transform.position.z + (zDistanceFromTarget > 0 ? camera.farClipPlane : camera.nearClipPlane));
+    // If object is in front of target, use near clip plane. If behind target, use farClipPlane
+    float clippingPlane => (cam.transform.position.z + (zDistanceFromTarget > 0 ? cam.farClipPlane : cam.nearClipPlane));
 
-    // The further object from player is, the faster ParallaxEffect object will move
-    // Drag to Z value to make it move slower
+    // The futher the object from the player, the faster the ParallaxEffect object will move. Drag it's Z value closer to the target to make it move slower.
     float parallaxFactor => Mathf.Abs(zDistanceFromTarget) / clippingPlane;
 
     // Start is called before the first frame update
@@ -39,9 +34,10 @@ public class ParallaxEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 newPosition = startingPosition + canMoveSinceStart * parallaxFactor;
+        // When the target moves, move the parallax object the same distance times a multiplier
+        Vector2 newPosition = startingPosition + camMoveSinceStart * parallaxFactor;
 
-        // when moving, Z position stay const
+        // The X/Y position changes based on target travel speed times the parallax factor, but Z stays consistent
         transform.position = new Vector3(newPosition.x, newPosition.y, startingZ);
     }
 }
