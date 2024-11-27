@@ -1,5 +1,87 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &564651849434657364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4076551824858659758}
+  - component: {fileID: 8672727976229591832}
+  - component: {fileID: 9059386378854568335}
+  m_Layer: 7
+  m_Name: SwordAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4076551824858659758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564651849434657364}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6903068114064026298}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8672727976229591832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564651849434657364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98cecc5e34ec3ff48bacf809710c0fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 15
+  knockback: {x: 2, y: 2}
+--- !u!60 &9059386378854568335
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564651849434657364}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.034994602, y: 1.0829124}
+      - {x: -0.7254782, y: 1.1489825}
+      - {x: -1.1917934, y: 0.8718302}
+      - {x: -0.23117065, y: 0.15281534}
+      - {x: -0.4671116, y: -0.49585152}
+      - {x: -0.9354162, y: -0.7675834}
+      - {x: -0.034505308, y: -0.8188971}
+      - {x: 0.19904196, y: -0.59453845}
+      - {x: 0.50607586, y: -0.13373613}
+      - {x: 0.4315939, y: 0.59156317}
 --- !u!1 &6903068114064026297
 GameObject:
   m_ObjectHideFlags: 0
@@ -16,6 +98,7 @@ GameObject:
   - component: {fileID: 4034121063820088153}
   - component: {fileID: 3743184562508397448}
   - component: {fileID: 3900245663358104889}
+  - component: {fileID: 8255514594595480796}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -34,7 +117,8 @@ Transform:
   m_LocalPosition: {x: 0.98, y: -1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4076551824858659758}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -125,10 +209,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5
   runSpeed: 8
+  airWalkSpeed: 3
   jumpImpulse: 10
-  walkOnTheAirSpeed: 5
   _isMoving: 0
-  _isGrounded: 0
   _isRunning: 0
   _isFacingRight: 1
 --- !u!114 &8085056185748709082
@@ -303,8 +386,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012096405, y: -0.21168292}
-  m_Size: {x: 0.7057686, y: 1.7581339}
+  m_Offset: {x: -0.021927595, y: -0.21168292}
+  m_Size: {x: 0.5288024, y: 1.7581339}
   m_Direction: 0
 --- !u!114 &3900245663358104889
 MonoBehaviour:
@@ -335,6 +418,44 @@ MonoBehaviour:
   groundDistance: 0.5
   wallDistance: 0.2
   ceilingDistance: 0.05
-  _isGrounded: 0
+  _isGrounded: 1
   _isOnWall: 0
   _isOnCeiling: 0
+--- !u!114 &8255514594595480796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6903068114064026297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe53655203ae604f8f7948bccadf814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageableHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5869085546192786684}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  damageableDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxHealth: 100
+  _health: 100
+  _isAlive: 1
+  isInvincible: 0
+  invincibilityTime: 1
