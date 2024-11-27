@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789c4cd8d3331c54f87a9007ab8fb0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420031}
+  cam: {fileID: 519420031}
   followTarget: {fileID: 6903068114310787802}
 --- !u!1 &284623539
 GameObject:
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789c4cd8d3331c54f87a9007ab8fb0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420031}
+  cam: {fileID: 519420031}
   followTarget: {fileID: 6903068114310787802}
 --- !u!1 &515154157
 GameObject:
@@ -36196,6 +36196,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1406140794 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1507759245201873815, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
+  m_PrefabInstance: {fileID: 1061051478196487689}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1103aab38cfa184c999b8c1cdb8638f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1624508873
 GameObject:
   m_ObjectHideFlags: 0
@@ -68853,7 +68864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789c4cd8d3331c54f87a9007ab8fb0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420031}
+  cam: {fileID: 519420031}
   followTarget: {fileID: 6903068114310787802}
 --- !u!1 &1945851479 stripped
 GameObject:
@@ -68935,6 +68946,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kngiht Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7488489676781586486, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
+      propertyPath: attackZone
+      value: 
+      objectReference: {fileID: 1406140794}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f2d6cc3a62d2f4a8b2918c9c0023af, type: 3}
 --- !u!1001 &6903068114310787796
@@ -69008,6 +69023,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8085056185748709082, guid: 3efbfc6b122cb5649b344b58cb1d61d3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnJump
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3efbfc6b122cb5649b344b58cb1d61d3, type: 3}
 --- !u!4 &6903068114310787802 stripped
@@ -69031,15 +69050,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0.005734682, y: -0.25614685}
   m_Size: {x: 0.5926738, y: 1.6368905}
   m_Direction: 0
---- !u!114 &6903068114310787809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945851479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfe53655203ae604f8f7948bccadf814, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
