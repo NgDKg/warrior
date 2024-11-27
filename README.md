@@ -21,3 +21,6 @@ Warrior là một trò chơi 2D Platformer, trong đó người chơi điều kh
 
 # Mục tiêu dự án:
 Mang đến trải nghiệm chiến đấu và khám phá đầy thử thách cho người chơi thông qua một trò chơi 2D platformer hấp dẫn, với lối chơi tinh tế, hệ thống chiến đấu mượt mà, và câu chuyện ly kỳ về hành trình của một chiến binh dũng cảm.
+
+# Doc: 
+https://docs.google.com/document/d/1mC82hbEFz8GGN_kcpMqpEG3bLFGl8EsOTyS_kDV9i4g/edit?usp=sharing
