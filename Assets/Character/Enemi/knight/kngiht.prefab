@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5833191055629542425}
   - component: {fileID: 4703382119341625550}
   - component: {fileID: 5151926566208655788}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: SwordAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3135947344662379494}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff45b674d9d223f4281efa4afe760b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkAcceleration: 3
+  walkAcceleration: 50
   maxSpeed: 3
   walkStopRate: 0.05
   attackZone: {fileID: 1507759245201873815}
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 9079978245311510641}
   - component: {fileID: 8175809847007688919}
   - component: {fileID: 1507759245201873815}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: DetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 8198404800473630383}
   - component: {fileID: 5095616689701883353}
   - component: {fileID: 5394069975628831803}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: CliffDetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

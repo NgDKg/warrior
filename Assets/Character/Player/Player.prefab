@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4076551824858659758}
   - component: {fileID: 8672727976229591832}
   - component: {fileID: 9059386378854568335}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SwordAttack1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 5910506374796063316}
   - component: {fileID: 2670878678343542393}
   - component: {fileID: 7279723875054199261}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SwordAttack3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,6 +166,37 @@ PolygonCollider2D:
       - {x: 0.65559065, y: -0.9569566}
       - {x: 1.3209028, y: -0.7769747}
       - {x: 1.6107264, y: -0.4100228}
+--- !u!1 &6824454201264864557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4687979395058397471}
+  m_Layer: 10
+  m_Name: RangeAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4687979395058397471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6824454201264864557}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.89, y: -0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6903068114064026298}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6903068114064026297
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +214,7 @@ GameObject:
   - component: {fileID: 3743184562508397448}
   - component: {fileID: 3900245663358104889}
   - component: {fileID: 8255514594595480796}
+  - component: {fileID: 9013436015635842723}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -205,6 +237,7 @@ Transform:
   - {fileID: 4076551824858659758}
   - {fileID: 2734552277252371489}
   - {fileID: 5910506374796063316}
+  - {fileID: 4687979395058397471}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -296,7 +329,9 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 8
   airWalkSpeed: 3
+  airRunSpeed: 5
   jumpImpulse: 10
+  jumpForce: 0
   _isMoving: 0
   _isRunning: 0
   _isFacingRight: 1
@@ -433,6 +468,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d4ecf4aa-bcdd-44a9-bd48-1917c69ee237
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5869085546192786684}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnRangedAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c3f57e8f-1f6b-4986-8068-a5e8d6ede80c
+    m_ActionName: Player/FireBall[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -469,7 +520,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.021927595, y: -0.21168292}
@@ -545,6 +596,20 @@ MonoBehaviour:
   _isAlive: 1
   isInvincible: 0
   invincibilityTime: 1
+--- !u!114 &9013436015635842723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6903068114064026297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bede5d508ec3e8449582bcc93f35320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchPoint: {fileID: 0}
+  projectilePrefab: {fileID: 0}
 --- !u!1 &8546983977474590626
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +621,7 @@ GameObject:
   - component: {fileID: 2734552277252371489}
   - component: {fileID: 2268499105849811656}
   - component: {fileID: 7694983448566417141}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SwordAttack2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

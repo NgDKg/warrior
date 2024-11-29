@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     public float walkSpeed = 5f;
     public float runSpeed = 8f;
     public float airWalkSpeed = 3f;
+    public float airRunSpeed = 5f;
     public float jumpImpulse = 10f;
+    public bool jumpForce = false;
     Vector2 moveInput;
     TouchingDirections touchingDirections;
     Damageable damageable;
@@ -27,17 +29,25 @@ public class PlayerController : MonoBehaviour
                     {
                         if (IsRunning)
                         {
+                            jumpForce = true;
                             return runSpeed;
                         }
                         else
                         {
+                            jumpForce = false;
                             return walkSpeed;
                         }
                     }
                     else
                     {
-                        // Air Move
-                        return airWalkSpeed;
+                        if (jumpForce)
+                        {
+                            return airRunSpeed;
+                        }
+                        else
+                        {
+                            return airWalkSpeed;
+                        }                        
                     }
                 }
                 else
