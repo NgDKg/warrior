@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "RangeaAttack",
+                    "type": "Button",
+                    "id": "c3f57e8f-1f6b-4986-8068-a5e8d6ede80c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -291,6 +300,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bac769fb-1aca-4a2f-bb2f-e9c4600aea4f",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "RangeaAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
