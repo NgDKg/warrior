@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DetectionZone : MonoBehaviour
 {
-    public List<Collider2D> detectedColider = new List<Collider2D>();
+    public UnityEvent noCollidersRemain;
+
+    public List<Collider2D> detectedColliders;
     Collider2D col;
 
     private void Awake()
@@ -12,13 +15,19 @@ public class DetectionZone : MonoBehaviour
         col = GetComponent<Collider2D>();
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        detectedColider.Add(collision);
+        detectedColliders.Add(collision);
     }
 
-    public void OnTriggerExit2D(Collider2D collision)
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        detectedColider.Remove(collision);
+        detectedColliders.Remove(collision);
+
+        if (detectedColliders.Count <= 0)
+        {
+            noCollidersRemain.Invoke();
+        }
     }
 }
