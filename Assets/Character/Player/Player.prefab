@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 9013436015635842723}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -659,6 +659,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c3f57e8f-1f6b-4986-8068-a5e8d6ede80c
     m_ActionName: Player/FireBall[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 447ea09f-027b-4a05-9f5f-73bec0d157fc
+    m_ActionName: UI/Escape[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -745,6 +749,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe53655203ae604f8f7948bccadf814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+  damageableDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
   _maxHealth: 100
   _health: 100
   _isAlive: 1
