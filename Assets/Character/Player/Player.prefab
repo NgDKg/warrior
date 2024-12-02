@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 15
-  knockback: {x: 2, y: 0}
+  knockback: {x: 0, y: 2}
 --- !u!60 &9059386378854568335
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 25
-  knockback: {x: 5, y: 2}
+  knockback: {x: 5, y: 3}
 --- !u!60 &7279723875054199261
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -403,7 +403,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6903068114064026297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.98, y: -1.6, z: 0}
+  m_LocalPosition: {x: 414.53, y: -4.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -505,7 +505,7 @@ MonoBehaviour:
   runSpeed: 8
   airWalkSpeed: 3
   airRunSpeed: 5
-  jumpImpulse: 10
+  jumpImpulse: 7
   jumpForce: 0
   _isMoving: 0
   _isRunning: 0
@@ -631,7 +631,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5869085546192786684}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnAir
+        m_MethodName: OnJump
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -699,7 +699,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.021927595, y: -0.21168292}
@@ -759,10 +759,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _maxHealth: 100
-  _health: 100
+  _health: 50
   _isAlive: 1
   isInvincible: 0
-  invincibilityTime: 1
+  invincibilityTime: 1.5
 --- !u!114 &9013436015635842723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,7 +823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 15
-  knockback: {x: 2, y: 0}
+  knockback: {x: 0, y: 2}
 --- !u!60 &7694983448566417141
 PolygonCollider2D:
   m_ObjectHideFlags: 0
