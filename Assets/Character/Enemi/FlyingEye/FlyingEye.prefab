@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 907751583537786935}
   - component: {fileID: 4760506390790449375}
   - component: {fileID: 3862719632215731245}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: AttackDetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.03854968, y: 0.052129522}
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 5334187577782340413}
   - component: {fileID: 8827218698812576350}
   - component: {fileID: 8757274951412836706}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: BiteAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6704888505307521497}
   - component: {fileID: 2512062322066938072}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: DeathColider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
